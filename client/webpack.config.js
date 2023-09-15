@@ -18,12 +18,32 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({
+        template: './index.html', // the path to the template file
+        title: 'Webpack Plugin' // title to use for generated HTML document
+      }),
+      new WorkboxPlugin.GenerateSW(),
+      new InjectManifest({
+        swSrc: './src-sw.js', // path and filename of service worker file that will be read during build process
+        swDest: 'service-worker.js', // name of the service worker file that this plugin will create
+      }),
     ],
-
     module: {
       rules: [
-        
+        {
+          test: /\.css$/i, // this regex means that files ending ($) in '.css' (case insensitive) are tested
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.m?js$/, // this regex means that files ending in either .js or .mjs are tested. the '?' means that the 'm' is matched 0 or 1 time.
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
+        },
       ],
     },
   };
