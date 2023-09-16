@@ -31,6 +31,7 @@ registerRoute(
   ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
   // 'style' refers to CSS files, 'script' refers to JS files, and 'worker' refers to the service worker
   // the includes() method checks if the array includes an element, and request.destination returns the type of resource sought out by request, e.g. 'script'
+  // source: https://developer.mozilla.org/en-US/docs/Web/API/Request/destination
   new StaleWhileRevalidate({
   // this request strategy responds with the cached version of the resource if it is available, and waits for the network response otherwise. it will cache responses with a status code of 200 - each successful request updates the cache with the network response.
     cacheName: 'asset-cache',

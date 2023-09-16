@@ -19,7 +19,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html', // the path to the template file
+        template: './index.html', // the path to the template file, source: https://github.com/jantimon/html-webpack-plugin/blob/main/docs/template-option.md
         title: 'Webpack Plugin' // title to use for generated HTML document
       }),
       new WorkboxPlugin.GenerateSW(),
