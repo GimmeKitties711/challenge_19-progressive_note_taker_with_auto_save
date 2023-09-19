@@ -22,10 +22,27 @@ module.exports = () => {
         template: './index.html', // the path to the template file, source: https://github.com/jantimon/html-webpack-plugin/blob/main/docs/template-option.md
         title: 'Webpack Plugin' // title to use for generated HTML document
       }),
-      new WorkboxPlugin.GenerateSW(),
       new InjectManifest({
         swSrc: './src-sw.js', // path and filename of service worker file that will be read during build process
-        swDest: 'service-worker.js', // name of the service worker file that this plugin will create
+        swDest: 'src-sw.js', // name of the service worker file that this plugin will create
+      }),
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
+        description: 'Take notes that autosave online and offline',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
       }),
     ],
     module: {

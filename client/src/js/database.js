@@ -18,9 +18,10 @@ export const putDb = async (content) => {
   const jateDb = await openDB('jate', 1); // parameters: name of database, version of database
   const transact = jateDb.transaction('jate', 'readwrite'); // params: store name, mode
   const objStore = transact.objectStore('jate'); // returns an IDBObjectStore in the scope of the transaction
-  const req = objStore.add({ content: content }); // pass the content into the store using the add method
+  const req = objStore.put({ id: 1, value: content }); // pass the content with an id of 1 into the store using the put method
   const res = await req;
-  console.log('data saved to database: ', res) // confirm the request
+  //console.log('data saved to database: ', res.value) // confirm the request
+  console.log('data saved to database: ', res.value)
 }
 
 // TODO: Add logic for a method that gets all the content from the database
@@ -29,10 +30,10 @@ export const getDb = async () => {
   const jateDb = await openDB('jate', 1);
   const transact = jateDb.transaction('jate', 'readonly');
   const objStore = transact.objectStore('jate');
-  const req = objStore.getAll(IDB); // get all values from the database
+  const req = objStore.get(1); // get all values that have an id of 1 from the database
   const res = await req;
-  console.log('result.value: ', res);
-  return res;
+  console.log('result.value: ', res.value);
+  return res.value;
 };
 
 initdb();
