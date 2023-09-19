@@ -30,10 +30,10 @@ export const getDb = async () => {
   const jateDb = await openDB('jate', 1);
   const transact = jateDb.transaction('jate', 'readonly');
   const objStore = transact.objectStore('jate');
-  const req = objStore.get(1); // get all values that have an id of 1 from the database
-  const res = await req;
-  console.log('result.value: ', res.value);
-  return res.value;
+  const request = objStore.get(1); // get all values that have an id of 1 from the database
+  const result = await request;
+  console.log('result.value: ', result.value);
+  return result.value;
 };
 
 initdb();
