@@ -18,10 +18,10 @@ export const putDb = async (content) => {
   const jateDb = await openDB('jate', 1); // parameters: name of database, version of database
   const transact = jateDb.transaction('jate', 'readwrite'); // params: store name, mode
   const objStore = transact.objectStore('jate'); // returns an IDBObjectStore in the scope of the transaction
-  const req = objStore.put({ id: 1, value: content }); // pass the content with an id of 1 into the store using the put method
-  const res = await req;
-  //console.log('data saved to database: ', res.value) // confirm the request
-  console.log('data saved to database: ', res.value)
+  const request = objStore.put({ id: 1, value: content }); // pass the content with an id of 1 into the store using the put method
+  const result = await request;
+  //console.log('data saved to database: ', result.value) // confirm the request
+  console.log('data saved to database: ', result);
 }
 
 // TODO: Add logic for a method that gets all the content from the database
