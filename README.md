@@ -14,37 +14,80 @@ In Challenge 11, the task was to create a notetaking application where the user 
 - [Questions](#questions)
 
 ## Installation
-No installation is required for this project; however, you can click the 'Install!' button in the top left corner to install the app on your computer: (picture of install button)
+No installation is required for this project; however, you can click the 'Install!' button in the top left corner to install the app on your computer:
+
+![Install button zoomed in](Assets/challenge_19-install_button.png)
 
 ## Usage
-The text editor starts with no text except the JATE (Just Another Text Editor) logo when loaded up: (picture of starting page) After writing your own text, the new content is saved when you click off the window (anywhere outside of the writing area) (picture of console message the window has lost focus here) **Important:** You must click off the window for the content to be saved. If you write new text then refresh or close the tab without clicking off the window first, your newest changes will be lost (browser only). You can also turn off the wifi and your changes are still saved. The following pictures show the application tab of the devtools thingy: (picture of manifest) (picture of service worker) (picture of indexeddb > jate > jate)
+The text editor starts with no text except the JATE (Just Another Text Editor) logo when loaded up:
+
+![Page on load](Assets/challenge_19-app_when_opened.png)
+
+After writing your own text, the new content is saved when you click off the window (anywhere outside of the writing area) 
+
+![Editor has lost focus console message](Assets/challenge_19-change_made.png)
+
+**Important:** You **must** click off of the window to save the content. If you write new text then refresh or close the tab without clicking off the window first, your newest changes will be lost (browser only). You can also turn off the wifi and your changes are still saved.
+
+JATE can also be installed from the browser. Clicking the install button produces a message in the console and opens a prompt:
+
+`You have clicked the install button.`
+
+![Install prompt and associated console message](Assets/challenge_19-install_prompt_and_console_message.png)
+
+**Note:** the install button works both online and offline.
+
+Installing the app closes JATE in the browser and opens it in the app, producing the console message:
+
+`The app has been installed successfully.`
+
+![Successful installation and associated console message](Assets/challenge_19-successful_installation_and_console_message.png)
+
+After you install the app, you have the option to uninstall it. Click on the vertical stack of three dots at the top of the app to open a drop-down menu:
+
+![How to uninstall JATE](Assets/challenge_19-how_to_uninstall_jate.png)
+
+Once you click on `Uninstall Just Another Text Editor...`, you are asked to respond to this prompt:
+
+![JATE uninstall options](Assets/challenge_19-jate_uninstall_options.png)
+
+The following images show the Application tab of Chrome DevTools: 
+
+**Manifest (1 of 3):**
+![Manifest info](Assets/challenge_19-manifest_info.png)
+
+**Manifest (2 of 3):**
+![Manifest bigger icons](Assets/challenge_19-manifest_bigger_icons.png)
+
+**Manifest (3 of 3):**
+![Manifest smaller icons](Assets/challenge_19-manifest_smaller_icons.png)
+
+**Service workers:**
+![Service workers](Assets/challenge_19-service_workers.png)
+
+**IndexedDB data:**
+![IndexedDB data](Assets/challenge_19-indexedDB_data.png)
+
+**Important:** The IndexedDB data in the Application tab does not automatically update when new changes are made. The following image shows a new line, `More pasta please :)`, being added:
+
+![thingy](Assets/challenge_19-change_made_data_may_be_stale.png)
+
+To see the updated text in the Value section, click the refresh icon ⭮ in the top left corner.
 
 A link to the deployed application can be found [here](https://progressive-note-taking-app-eb6bc28e4725.herokuapp.com/).
 
-This app can also be installed on your mobile device. If you find your IP address for your internet network, you can go to your browser in Chrome and enter:
-
-`ip address:port`
-
-In my case it is (picture of ip address:port here)
-
-and once you have navigated to the app in the browser, you can install it (insert picture of installation here)
-
-and it will appear on your phone app screen thingy, as shown here:
-
-(picture of app installed on phone here)
-
 ## Credits
-Received assistance from tutor Mansi Patel, AskBCS assistant David, TA Michael Seaman, and instructor Robbert Wijtman. The following web resources helped me write the code for this project: (blah blah blah blah blah)
+Received assistance from tutor Mansi Patel, AskBCS assistant David, TA Michael Seaman, and instructor Robbert Wijtman. The following web resources helped me write the code for this project:
 
-https://github.com/jantimon/html-webpack-plugin/blob/main/docs/template-option.md
+[GitHub: The template option](https://github.com/jantimon/html-webpack-plugin/blob/main/docs/template-option.md)
 
-https://developer.mozilla.org/en-US/docs/Web/API/Request/destination
+[request: destination](https://developer.mozilla.org/en-US/docs/Web/API/Request/destination)
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+[Optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
-https://web.dev/codelab-make-installable/
+[Code to make an app installable](https://web.dev/codelab-make-installable/)
 
-https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle
+[toggle() method](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle)
 
 ## Contributing
 No contribution is necessary for this project.
