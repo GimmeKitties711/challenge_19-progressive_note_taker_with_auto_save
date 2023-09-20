@@ -142,3 +142,23 @@ You are required to submit the following for review:
 
 - - -
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+
+
+
+
+
+
+DO NOT DELETE
+
+Sources:
+
+https://github.com/jantimon/html-webpack-plugin/blob/main/docs/template-option.md
+
+https://developer.mozilla.org/en-US/docs/Web/API/Request/destination
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+
+https://web.dev/codelab-make-installable/
+
+https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle
+

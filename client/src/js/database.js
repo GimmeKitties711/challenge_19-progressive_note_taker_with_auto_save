@@ -17,7 +17,7 @@ export const putDb = async (content) => {
   console.log('Put content into the database');
   const jateDb = await openDB('jate', 1); // parameters: name of database, version of database
   const transact = jateDb.transaction('jate', 'readwrite'); // params: store name, mode
-  const objStore = transact.objectStore('jate'); // returns an IDBObjectStore in the scope of the transaction
+  const objStore = transact.objectStore('jate'); // return an IDBObjectStore in the scope of the transaction
   const request = objStore.put({ id: 1, value: content }); // pass the content with an id of 1 into the store using the put method
   const result = await request;
   result ? console.log('Data saved to database: ' + result + ' (successful)') : console.log('Data not put into the database successfully.')
@@ -27,10 +27,10 @@ export const putDb = async (content) => {
   if (result) {
     console.log('Data saved to database: ' + result + ' (successful)');
   } else {
-    console.log('Data not found in the database.');
+    console.log('Data not put into the database successfully.');
   }
 
-  the if condition is used if result is 1 (truthy), otherwise the else condition is used (result is falsy).
+  the if condition is used if result is 1 (truthy); otherwise, the else condition is used (result is falsy).
   */
 }
 
@@ -43,7 +43,7 @@ export const getDb = async () => {
   const request = objStore.get(1); // get all values that have an id of 1 from the database
   const result = await request;
   result ? console.log('result.value: ', result.value) : console.log('Data not found in the database. Get started by typing text in the window. Save the text by clicking off of the window.')
-  return result?.value; // the question mark at the end of result is called optional chaining. if result is undefined/null, result?.value returns undefined instead of throwing an error. source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+  return result?.value; // the question mark between 'result' and '.' is called optional chaining. if result is undefined/null, result?.value returns undefined instead of throwing an error. source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 };
 
 initdb();

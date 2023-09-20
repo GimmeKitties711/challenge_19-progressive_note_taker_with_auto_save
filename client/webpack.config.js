@@ -23,8 +23,9 @@ module.exports = () => {
         title: 'Webpack Plugin' // title to use for generated HTML document
       }),
       new InjectManifest({
-        swSrc: './src-sw.js', // path and filename of service worker file that will be read during build process
+        swSrc: './src-sw.js', // path and filename of the service worker file that will be read during build process
         swDest: 'src-sw.js', // name of the service worker file that this plugin will create
+        // these two fields have to be the same
       }),
       new WebpackPwaManifest({
         fingerprints: false,
@@ -38,9 +39,9 @@ module.exports = () => {
         publicPath: './',
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('assets', 'icons'),
+            src: path.resolve('src/images/logo.png'), // the source image for the icons
+            sizes: [96, 128, 192, 256, 384, 512], // image sizes for the icons (96 x 96, 128 x 128, etc.)
+            destination: path.join('assets', 'icons'), // store the images in the assets/icons folder once the application is built
           },
         ],
       }),
@@ -48,7 +49,7 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.css$/i, // this regex means that files ending ($) in '.css' (case insensitive) are tested
+          test: /\.css$/i, // this regex means that files ending in '.css' (case insensitive) are tested
           use: ['style-loader', 'css-loader'],
         },
         {
