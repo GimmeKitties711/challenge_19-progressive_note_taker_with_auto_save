@@ -35,8 +35,6 @@ JATE can also be installed from the browser. Clicking the install button opens a
 
 ![Install prompt and associated console message](Assets/challenge_19-install_prompt_and_console_message.png)
 
-**Note:** the install button works both online and offline.
-
 Installing JATE closes it in the browser and opens it in the app, producing the console message:
 
 `The app has been installed successfully.`
@@ -46,6 +44,10 @@ Installing JATE closes it in the browser and opens it in the app, producing the 
 It also creates an icon on your desktop:
 
 ![JATE desktop icon](Assets/challenge_19-desktop_icon_after_installation.png)
+
+Once the app has been installed, you can open it from your browser as shown below:
+
+![Open with JATE](Assets/challenge_19-open_app_from_browser.png)
 
 After you install the app, you have the option to uninstall it. Click on the vertical ellipsis at the top of the app `⋮` to open a drop-down menu:
 
